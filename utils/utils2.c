@@ -30,33 +30,33 @@ int	ft_isspace(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi_ptr(const char *nptr, int *i)
 {
-	unsigned int	i;
 	long long		num;
 	long long		sign;
 
-	i = 0;
 	num = 0;
 	sign = 1;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (ft_isspace(nptr[*i]))
+		(*i)++;
+	if (nptr[*i] == '-' || nptr[*i] == '+')
 	{
-		if (nptr[i] == '-')
+		if (nptr[*i] == '-')
 			sign = -1;
-		i++;
+		(*i)++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (nptr[*i] >= '0' && nptr[*i] <= '9')
 	{
-		num = num * 10 + (nptr[i] - '0');
+		num = num * 10 + (nptr[*i] - '0');
 		if (num > 2147483647 && sign == 1)
 			return (-1);
 		if (num > 2147483648 && sign == -1)
-			return (0);
-		i++;
+			return (-1);
+		(*i)++;
 	}
-	return (num * sign);
+	while (ft_isspace(nptr[*i]))
+		(*i)++;
+	return ((int)(num * sign));
 }
 
 void	ft_create_floor_ceil(t_all *all, int color, int start)

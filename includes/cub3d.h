@@ -104,7 +104,7 @@ int		ft_is_cub(const char *name);
 void	ft_start_parse(t_all *all, char *name);
 int		ft_parse_line(t_all *all, char *line);
 int		ft_isspace(char c);
-int		ft_atoi(const char *nptr);
+int		ft_atoi_ptr(const char *nptr, int *i);
 int		ft_parse_map(t_all *all, char *line, int i);
 int		ft_check_map_line(char *line, int i);
 void	ft_free_arr(char **arr);

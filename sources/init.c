@@ -27,8 +27,8 @@ void	ft_init(t_all *all)
 	all->map.so = NULL;
 	all->map.we = NULL;
 	all->map.ea = NULL;
-	all->map.f = 0;
-	all->map.c = 0;
+	all->map.f = -1;
+	all->map.c = -1;
 	all->map.x = 0;
 	all->map.y = 0;
 	all->plr.pos.x = 0;

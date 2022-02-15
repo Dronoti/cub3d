@@ -20,7 +20,6 @@ int	main(int argc, char **argv)
 	{
 		ft_init(&all);
 		ft_start_parse(&all, argv[1]);
-		ft_init_mlx(&all);
 		ft_draw_scene(&all);
 		mlx_hook(all.mlx.win, 2, 0, &ft_handler_keys, &all);
 		mlx_hook(all.mlx.win, 17, 0, &ft_close, &all);

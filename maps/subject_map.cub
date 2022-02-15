@@ -3,8 +3,8 @@ SO ./textures/greystone.xpm
 WE ./textures/redbrick.xpm
 EA ./textures/wood.xpm
 
-F 220,100,0
-C 225,30,0
+F 165,165,165
+C 220,220,220
 
 
         1111111111111111111111111
