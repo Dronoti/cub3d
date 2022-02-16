@@ -41,6 +41,14 @@ void	ft_free_arr(char **arr)
 void	ft_free_exit(char *msg, t_all *all)
 {
 	ft_free_arr(all->map.map);
+	if (all->map.no)
+		free(all->map.no);
+	if (all->map.so)
+		free(all->map.so);
+	if (all->map.we)
+		free(all->map.we);
+	if (all->map.ea)
+		free(all->map.ea);
 	if (all->mlx.img)
 		mlx_destroy_image(all->mlx.mlx, all->mlx.img);
 	if (all->mlx.win)

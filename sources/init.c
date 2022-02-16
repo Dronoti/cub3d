@@ -54,7 +54,8 @@ void	ft_init2(t_all *all)
 	all->plane.y = 0;
 	all->wall.height = 0;
 	all->wall.top = 0;
-	all->wall.bottom = 0;
+	all->wall.tex_x = 0;
+	all->wall.tex_y = 0;
 	all->wall.dist = 0;
 }
 

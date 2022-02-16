@@ -22,6 +22,7 @@ SRC = sources/main.c \
 	sources/parser.c \
 	sources/parse_map.c \
 	sources/init.c \
+	sources/textures.c \
 	sources/handler_keys.c \
 	sources/check_parse.c \
 	sources/draw_scene.c \

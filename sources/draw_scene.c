@@ -71,27 +71,23 @@ void	ft_calc_wall(t_all *all)
 		all->wall.dist = all->ray.side.y - all->ray.delta.y;
 	all->wall.height = (int)(WIN_HEIGHT / all->wall.dist);
 	all->wall.top = -all->wall.height / 2 + WIN_HEIGHT / 2;
-	if (all->wall.top < 0)
-		all->wall.top = 0;
-	all->wall.bottom = all->wall.height / 2 + WIN_HEIGHT / 2;
-	if (all->wall.bottom >= WIN_HEIGHT)
-		all->wall.bottom = WIN_HEIGHT - 1;
 }
 
 void	ft_draw_vert_line(t_all *all)
 {
-	int	y;
-	int	color;
+	double	scale;
+	int		color;
+	int		i;
 
-	y = 0;
-	if (all->ray.vert_hit)
-		color = 0x104BA9;
-	else
-		color = 0x6A93D4;
-	while (y < all->wall.height)
+	scale = 64.0 / (double)all->wall.height;
+	all->wall.tex_y = 0;
+	i = 0;
+	while (i < all->wall.height)
 	{
-		my_mlx_pixel_put(all, all->ray.i, all->wall.top + y, color);
-		y++;
+		color = ft_find_texel(all, all->wall.tex_x, (int)all->wall.tex_y);
+		my_mlx_pixel_put(all, all->ray.i, all->wall.top + i, color);
+		all->wall.tex_y += scale;
+		i++;
 	}
 }
 
@@ -105,6 +101,7 @@ void	ft_draw_scene(t_all *all)
 		ft_init_ray(all);
 		ft_run_ray(all);
 		ft_calc_wall(all);
+		ft_find_tex_x(all);
 		ft_draw_vert_line(all);
 		all->ray.i++;
 	}

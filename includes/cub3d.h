@@ -46,10 +46,10 @@ typedef struct s_map
 {
 	char	**map;
 	int		height;
-	char	*no;
-	char	*so;
-	char	*we;
-	char	*ea;
+	int		*no;
+	int		*so;
+	int		*we;
+	int		*ea;
 	int		f;
 	int		c;
 	int		x;
@@ -82,7 +82,8 @@ typedef struct s_wall
 {
 	int		height;
 	int		top;
-	int		bottom;
+	int		tex_x;
+	double	tex_y;
 	double	dist;
 }				t_wall;
 
@@ -108,7 +109,7 @@ int		ft_atoi_ptr(const char *nptr, int *i);
 int		ft_parse_map(t_all *all, char *line, int i);
 int		ft_check_map_line(char *line, int i);
 void	ft_free_arr(char **arr);
-int		ft_parse_texture(t_all *all, char **addr, char *line, int i);
+int		ft_parse_texture(t_all *all, int **addr, char *line, int i);
 int		ft_parse_color(t_all *all, int *addr, char *line, int i);
 void	ft_init_mlx(t_all *all);
 void	ft_draw_scene(t_all *all);
@@ -126,5 +127,9 @@ void	ft_move_up_down(int	key, t_all *all);
 void	ft_move_left_right(int key, t_all *all);
 void	ft_rotation(int key, t_all *all);
 void	ft_create_floor_ceil(t_all *all, int color, int start);
+int		ft_check_xpm(const char *line);
+void	ft_find_tex_x(t_all *all);
+int		ft_find_texel(t_all *all, int x, int y);
+void	ft_copy_texture(int **addr, void *tex_img);
 
 #endif

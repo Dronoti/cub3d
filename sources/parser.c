@@ -32,10 +32,10 @@ int	ft_check_xpm(const char *line)
 	return (0);
 }
 
-int	ft_parse_texture(t_all *all, char **addr, char *line, int i)
+int	ft_parse_texture(t_all *all, int **addr, char *line, int i)
 {
-	void	*tex;
-	int		arg[5];
+	void	*tex_img;
+	int		arg[2];
 
 	if (all->map.map || *addr)
 		return (-1);
@@ -49,15 +49,15 @@ int	ft_parse_texture(t_all *all, char **addr, char *line, int i)
 		line[i] = '\0';
 	if (ft_check_xpm(line))
 		return (-1);
-	tex = mlx_xpm_file_to_image(all->mlx.mlx, line, &arg[0], &arg[1]);
-	if (arg[0] != arg[1] || !tex)
+	tex_img = mlx_xpm_file_to_image(all->mlx.mlx, line, &arg[0], &arg[1]);
+	if (arg[0] != 64 || arg[1] != 64 || !tex_img)
 	{
-		if (tex)
-			mlx_destroy_image(all->mlx.mlx, tex);
+		if (tex_img)
+			mlx_destroy_image(all->mlx.mlx, tex_img);
 		return (-1);
 	}
-	*addr = mlx_get_data_addr(tex, &arg[2], &arg[3], &arg[4]);
-	mlx_destroy_image(all->mlx.mlx, tex);
+	ft_copy_texture(addr, tex_img);
+	mlx_destroy_image(all->mlx.mlx, tex_img);
 	return (1);
 }
 
