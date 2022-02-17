@@ -1,4 +1,7 @@
 # Графический проект "Cub3D"
+[![forthebadge](https://forthebadge.com/images/badges/made-with-c.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://forthebadge.com)
 
 ### Описание проекта
 Данный проект основан на технологии [рейкастинга](https://ru.wikipedia.org/wiki/Ray_casting) -

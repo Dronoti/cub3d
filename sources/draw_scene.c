@@ -105,5 +105,6 @@ void	ft_draw_scene(t_all *all)
 		ft_draw_vert_line(all);
 		all->ray.i++;
 	}
+	ft_minimap(all);
 	mlx_put_image_to_window(all->mlx.mlx, all->mlx.win, all->mlx.img, 0, 0);
 }

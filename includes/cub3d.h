@@ -25,6 +25,10 @@
 # define KEY_D 2
 # define LEFT 123
 # define RIGHT 124
+# define POINT_SIZE 12
+# define WALL_COLOR 0x000000
+# define SPACE_COLOR 0xFFFFFF
+# define PLAYER_COLOR 0xFF0000
 
 # include "../utils/get_next_line/get_next_line.h"
 # include "../mlx/mlx.h"
@@ -131,5 +135,7 @@ int		ft_check_xpm(const char *line);
 void	ft_find_tex_x(t_all *all);
 int		ft_find_texel(t_all *all, int x, int y);
 void	ft_copy_texture(int **addr, void *tex_img);
+void	ft_minimap(t_all *all);
+void	ft_draw_point(t_all *all, int color, int x, int y);
 
 #endif

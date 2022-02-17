@@ -22,6 +22,7 @@ SRC = sources/main.c \
 	sources/parser.c \
 	sources/parse_map.c \
 	sources/init.c \
+	sources/minimap.c \
 	sources/textures.c \
 	sources/handler_keys.c \
 	sources/check_parse.c \
@@ -36,6 +37,8 @@ OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
+
+bonus: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C mlx/
