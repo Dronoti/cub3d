@@ -127,7 +127,7 @@ void	ft_calc_wall(t_all *all);
 void	ft_draw_vert_line(t_all *all);
 int		ft_handler_keys(int key, t_all *all);
 int		ft_close(t_all *all);
-void	ft_move_up_down(int	key, t_all *all);
+void	ft_move_up_down(int key, t_all *all);
 void	ft_move_left_right(int key, t_all *all);
 void	ft_rotation(int key, t_all *all);
 void	ft_create_floor_ceil(t_all *all, int color, int start);
